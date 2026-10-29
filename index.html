@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive login and registration application.">
+  <title>Login / Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card active-left" id="card" aria-label="Account access">
+      <section class="side" id="loginSide" aria-labelledby="loginTitle">
+        <h1 id="loginTitle">Login</h1>
+        <form id="loginForm">
+          <label class="input">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <input name="login" type="text" placeholder="Username or email" aria-label="Username or email" autocomplete="username" required maxlength="254">
+          </label>
+          <label class="input">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input name="password" type="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+          </label>
+          <button class="link" id="forgotBtn" type="button">Forgot Password?</button>
+          <button class="btn" type="submit">Login</button>
+        </form>
+        <p class="or">or login with social platforms</p>
+        <div class="socials" aria-label="Social login options">
+          <button class="social" type="button" aria-label="Google login">G</button>
+          <button class="social" type="button" aria-label="Facebook login">f</button>
+          <button class="social" type="button" aria-label="GitHub login"><i class="fa-brands fa-github" aria-hidden="true"></i></button>
+          <button class="social" type="button" aria-label="LinkedIn login">in</button>
+        </div>
+      </section>
+
+      <aside class="middle">
+        <div class="top">
+          <h2>Hello,<br>Welcome!</h2>
+          <p id="switchDescription">Don't have<br>an account?</p>
+        </div>
+        <button class="btn-outline" id="midBtn" type="button">Register</button>
+        <div class="bottom" id="bottomSwitch">
+          <p>Already<br>have an<br>account?</p>
+        </div>
+      </aside>
+
+      <section class="side" id="regSide" aria-labelledby="registerTitle">
+        <h2 id="registerTitle">Registration</h2>
+        <form id="registerForm">
+          <label class="input">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <input name="username" type="text" placeholder="Username" aria-label="Username" autocomplete="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_.-]{3,24}" required>
+          </label>
+          <label class="input">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <input name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" maxlength="254" required>
+          </label>
+          <label class="input">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input name="password" type="password" placeholder="Password (8+ characters)" aria-label="Create password" autocomplete="new-password" minlength="8" maxlength="72" required>
+          </label>
+          <button class="btn register-submit" type="submit">Create account</button>
+        </form>
+        <p class="or">or register with social platforms</p>
+        <div class="socials" aria-label="Social registration options">
+          <button class="social" type="button" aria-label="Google registration">G</button>
+          <button class="social" type="button" aria-label="Facebook registration">f</button>
+          <button class="social" type="button" aria-label="GitHub registration"><i class="fa-brands fa-github" aria-hidden="true"></i></button>
+          <button class="social" type="button" aria-label="LinkedIn registration">in</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="account-panel" id="accountPanel" hidden>
+      <div class="account-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+      <h2>You're signed in</h2>
+      <p id="accountDetails"></p>
+      <button class="btn" id="logoutBtn" type="button">Logout</button>
+    </section>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
